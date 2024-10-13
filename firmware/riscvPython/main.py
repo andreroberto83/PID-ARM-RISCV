@@ -26,29 +26,11 @@ Pin(12, Pin.OUT).value(0)
 led = Pin(13, Pin.OUT)
 led.value(0)
 
-# inicializa AD
-while not aux.iniADS1115():
-    print('Erro AD')
+while not aux.iniPerifericos():
     led.value(1)
-    sleep_ms(500)
+    sleep_ms(250)
     led.value(0)
-    sleep_ms(500)
-     
-# inicializa DA
-while not aux.iniMCP4725():
-    print('Erro DA')
-    led.value(1)
-    sleep_ms(500)
-    led.value(0)
-    sleep_ms(500)
-
-# inicializa SD
-while not aux.iniSDCard():
-    print('Erro SD')
-    led.value(1)
-    sleep_ms(500)
-    led.value(0)
-    sleep_ms(500)
+    sleep_ms(250)
 
 # configura PID
 aux.configPID()
